@@ -28,7 +28,9 @@ def calculate_results_list(metric, input_datarows):
 
     if metric == "hop_count":
       timestamp = datarow['log_time']
-      calculated_result = datarow['paris_traceroute_hop_dest_ip'] + ', ' + datarow['paris_traceroute_hop_src_ip'] + ', ' + datarow['connection_spec_client_ip']
+      calculated_result = datarow['paris_traceroute_hop_dest_ip'] + ', ' + \
+                          datarow['paris_traceroute_hop_src_ip'] + ', ' + \
+                          datarow['connection_spec_client_ip']
     elif metric == "minimum_rtt":
       timestamp = datarow['web100_log_entry_log_time']
       calculated_result = calculate_minrtt(datarow['web100_log_entry_snap_MinRTT'])
